@@ -1,0 +1,51 @@
+[alias]
+	review = "!f() { git log | grep -i -B 4 $@ | grep commit | sed s/commit\\ // | sed 's/$/^!/' | xargs -L 1 git difftool; }; f"
+	lazy = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+	co = checkout
+	br = branch
+	cm = commit
+	st = status
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
+	unhide-all = update-index --really-refresh
+	hidden = !git ls-files -v | grep \"^[a-z]\"
+	ignored = !git status -s --ignored | grep \"^!!\"
+[diff]
+	tool = kdiff3
+[merge]
+	tool = kdiff3
+[difftool]
+	prompt = false
+[user]
+	name = Erik Lilljequist
+	email = erik.lilljequist@scania.com
+[push]
+	default = simple
+
+[https]
+[http]
+[credential]
+	helper = osxkeychain
+[https]
+[http]
+[https]
+[http]
+[https]
+[http]
+[https]
+[http]
+[https]
+[http]
+[https]
+[http]
+[https]
+[http]
+[https]
+[http]
+[https]
+[http]
+[https]
+	proxy = http://localhost:3128
+[http]
+	proxy = http://localhost:3128
