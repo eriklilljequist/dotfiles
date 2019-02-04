@@ -9,8 +9,8 @@ mount_homedrive()
 
 mount_connected_services_shared()
 {
-  mkdir ~/mnt/connected_services_collaboration
-  mount -t smbfs //{PATH} ~/mnt/connected_services_collaboration
+  mkdir ~/mnt/{PATH}
+  mount -t smbfs //{PATH} ~/mnt/{PATH}
 }
 
 

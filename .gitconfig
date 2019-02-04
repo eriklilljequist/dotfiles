@@ -18,8 +18,8 @@
 [difftool]
 	prompt = false
 [user]
-	name = Erik Lilljequist
-	email = erik.lilljequist@scania.com
+	name = 
+	email = 
 [push]
 	default = simple
 
