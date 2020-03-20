@@ -1,33 +1,34 @@
 
 
+list_open_ports()
+{
+  lsof -i -n -P | grep TCP
+}
+
 mount_homedrive()
 {
   mkdir ~/mnt/p
-  mount -t smbfs //{PATH} ~/mnt/p
+  mount -t smbfs // ~/mnt/p
 }
-
-
-mount_connected_services_shared()
-{
-  mkdir ~/mnt/{PATH}
-  mount -t smbfs //{PATH} ~/mnt/{PATH}
-}
-
 
 umounthomedrive()
 {
   umount ~/mnt/p/
 }
 
-setnoproxy()
+whatsmyip()
 {
-   setproxy ''
+  curl https://ipecho.net/plain ; echo
 }
 
+setnoproxy()
+{
+  setproxy ''
+}
 
 setlocalproxy() 
 {
-    setproxy 'http://localhost:3128' 
+    setproxy 'http://127.0.0.1:3128' 
     echo "";
     echo "Proxy has been set to local"
 }
@@ -55,8 +56,9 @@ setproxy()
     echo `git config --global -l | grep -i proxy`
 }
 
-setnoproxy
+setlocalproxy
 
+echo "Setting default AWS_PROFILE"
+export AWS_PROFILE=
 export LSCOLORS="EHfxcxdxBxegecabagacad" 
 alias ll='ls -lGaf'
-
